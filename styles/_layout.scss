@@ -1,0 +1,8 @@
+.container-layout{
+    max-width: 1440px;
+
+}
+.grid-layout{
+    @include grid();
+    
+}

@@ -1,0 +1,67 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+
+}
+
+@mixin flex() {
+    display: flex;
+    align-items: center;
+}
+
+body {
+    width: 100%;
+    background: $white;
+    font-family: $body-font;
+    font-size: $font-p;
+    color: $text-color;
+    line-height: 1.2;
+    min-height: auto;
+}
+
+h1 {
+    font-weight: $font-bold;
+    white-space: nowrap;
+    color: $almost-black;
+}
+
+h3 {
+    font-size: 14px;
+    color: $medium-gray;
+    font-weight: 100;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: $medium-gray;
+}
+
+img {
+    max-width: 100%;
+    min-height: auto;
+
+
+}
+
+@mixin flex() {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@mixin grid() {
+    display: grid;
+    gap: 3em;
+
+}
+
+
+/* Background image for .home__img */
+@mixin home-img-background {
+    background-image: url('${$desktop-background-image}');
+}

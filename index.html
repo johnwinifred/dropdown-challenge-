@@ -1,39 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="/styles/main.css" />
+  <script src="script.js" defer></script>
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
   </style>
 </head>
+
 <body>
+  <!-- for the nav bar -->
+  <header>
+    <nav class="nav container-layout">
+      <!-- for the logo -->
+      <a href="#" class="nav__logo">snap</a>
 
-  Features
-  Company
-  Careers
-  About
+      <!-- the nav menu -->
+      <div class="nav__menu" id="nav__menu">
+        <ul class="nav__list">
 
-  Login
-  Register
+          <li class="nav__item">
+            <a href="#home" class="nav__link active-link"></a>
+          </li>
 
-  Make remote work
+          <div class="nav__item toggle-container">
+            <li class="nav__item toggle-button">
+              <a href="#features" class="nav__link">Features
+                <span class="toggle-icon"></span>
+              </a>
+              
+            </li>
+            <div class="nav__item toggle-content">
+              <div class="nav__item content">
+                <img src="images/icon-todo.svg" alt="">
+                <h3><a href="">Todo List</a> </h3>
+              </div>
+              <div class="nav__item  content">
+                <img src="images/icon-calendar.svg" alt="">
+                <h3><a href=""> Calender</a></h3>
+              </div>
+              <div class="nav__item  content">
+                <img src="images/icon-reminders.svg" alt="">
+                <h3><a href="">Reminders</a></h3>
+              </div>
+              <div class="nav__item  content">
+                <img src="images/icon-planning.svg" alt="">
+                <h3><a href="">Planning</a></h3>
+              </div>
 
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
+            </div>
+          </div>
 
-  Learn more
+          <div class="nav__item toggle-container">
+            <li class="nav__item toggle-button">
+              <a href="#company" class="nav__link">Company
+                <span class="toggle-icon"></span>
+              </a>
+              
+            </li>
+            <div class="nav__item toggle-content">
+              <div class="nav__item content">
+                <img src="" alt="">
+                <h3><a href="">History</a></h3>
+              </div>
+              <div class="nav__item  content">
+                <img src="" alt="">
+                <h3><a href="">Our Team</a></h3>
+              </div>
+              <div class="nav__item  content">
+                <img src="" alt="">
+                <h3><a href="">Blog</a></h3>
+              </div>
+
+            </div>
+          </div>
+
+          <li class="nav__item toggle-button">
+            <a href="#career" class="nav__link">Careers</a>
+          </li>
+
+          <li class="nav__item toggle-button">
+            <a href="#about" class="nav__link">About</a>
+          </li>
+          <!-- login and register section -->
+        <div class="nav__item nav__signup">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="#">Login</a></li>
+            <li class="nav__item"><a href="#" class="reg">Register</a></li>
+          </ul>
   
+        </div>
+        </ul>
+  
+  
+      </div>
+       
+     
+     
+      <!-- toggle section for small screens -->
+      <div class="nav__toggle" id="nav-toggle">
+        <a class="menu-icon"><img src="images/icon-menu.svg" alt=""></a>
+      </div>
+
+       <!--collaspe sidebar for small screens-->
+    <div class="nav__menu  nav__close">
+      <a href="#"><img src="images/icon-close-menu.svg" alt=""></a>
+     </div>
+    </nav>
+  </header>
+
+   
+  <!-- the landing page -->
+  <section class="home">
+    <!-- main container -->
+    <div class="home__container container-layout grid-layout">
+      <!-- write-up container -->
+      <div class="home__data">
+        <h1 class="home__title">Make
+          remote work </h1>
+        <p class="home__description">Get your team in sync, no matter your location.
+          Streamline processes, create team rituals, and
+          watch productivity soar.</p>
+        <a href="#" class="button">Learn More </a>
+
+
+      </div>
+      <!-- image container -->
+      <div class="home__img">
+        <!-- <img src="images/image-hero-desktop.png" alt=""> -->
+      </div>
+
+      <!--brands -->
+      <div class="home__brand">
+        <img src="images/client-databiz.svg" alt="">
+        <img src="images/client-audiophile.svg" alt="">
+        <img src="images/client-meet.svg" alt="">
+        <img src="images/client-maker.svg" alt="">
+      </div>
+    </div>
+
+
+  </section>
+
+  <!-- footer -->
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Winifred John</a>.
   </div>
+
+
+
+  
 </body>
+
 </html>

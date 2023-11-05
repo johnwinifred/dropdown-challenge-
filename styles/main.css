@@ -1,0 +1,455 @@
+@import url("https://fonts.google.com/specimen/Epilogue");
+/* Desktop font */
+header {
+  width: 100%;
+  position: fixed;
+  background-color: hsl(0, 0%, 98%);
+  left: 0;
+  top: 0;
+  padding: 0 1.5rem;
+}
+
+.button {
+  display: inline-block;
+  background-color: hsl(0, 0%, 8%);
+  color: hsl(0, 0%, 98%);
+  padding: 0.75rem 1.5rem;
+  border: 2px solid hsl(0, 0%, 8%);
+  border-radius: 0.5rem;
+  font-weight: 500;
+  margin-top: 3rem;
+}
+.button:hover {
+  background: hsl(0, 0%, 98%);
+  color: hsl(0, 0%, 8%);
+}
+
+.nav {
+  width: auto;
+}
+.nav__logo {
+  color: hsl(0, 0%, 8%);
+  font-size: 2em;
+}
+.nav li a:hover {
+  color: hsl(0, 0%, 8%);
+}
+.nav li .reg:hover {
+  border-color: hsl(0, 0%, 8%);
+}
+.nav li a:hover .toggle-icon {
+  color: red;
+}
+.nav__item a:hover .toggle-icon {
+  color: hsl(0, 0%, 8%);
+}
+.nav__item .toggle-icon {
+  width: 12px;
+  /* Set the appropriate width and height for your caret icon */
+  height: 12px;
+  background-image: url("/images/icon-arrow-down.svg");
+  /* Image for the caret-down icon */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  transition: color 0.3s;
+  transition: transform 0.3s;
+  /* Add a smooth transition effect */
+  transform: rotate(0deg);
+  /* Initial rotation state */
+}
+.nav__item .toggle-content {
+  display: none;
+  /* Hide the content initially */
+}
+.nav__item.toggle-content {
+  position: absolute;
+  top: 4em;
+  line-height: 0;
+  height: auto;
+  max-width: 100%;
+  border: 2px solid rgb(246, 246, 246);
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.99);
+  box-shadow: 31px 27px 89px -26px rgba(0, 0, 0, 0.48);
+  -webkit-box-shadow: 31px 27px 89px -26px rgba(0, 0, 0, 0.48);
+  -moz-box-shadow: 31px 27px 89px -26px rgba(0, 0, 0, 0.48);
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  background: hsl(0, 0%, 98%);
+  font-family: "Epilogue";
+  font-size: 16px;
+  color: hsl(0, 0%, 41%);
+  line-height: 1.2;
+  min-height: auto;
+}
+
+h1 {
+  font-weight: 700;
+  white-space: nowrap;
+  color: hsl(0, 0%, 8%);
+}
+
+h3 {
+  font-size: 14px;
+  color: hsl(0, 0%, 41%);
+  font-weight: 100;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: hsl(0, 0%, 41%);
+}
+
+img {
+  max-width: 100%;
+  min-height: auto;
+}
+
+/* Background image for .home__img */
+.container-layout {
+  max-width: 1440px;
+}
+
+.grid-layout {
+  display: grid;
+  gap: 3em;
+}
+
+@media screen and (max-width: 767px) {
+  .home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3em;
+  }
+  .home__container {
+    display: grid;
+    gap: 3em;
+    grid-template-areas: "imge" "txt" "brand";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 100px;
+    /* 90% of the viewport width */
+    max-width: 375px; /* Maximum width */
+  }
+  .home__data {
+    grid-area: txt;
+    order: 2;
+    width: 85%;
+    text-align: center;
+  }
+  .home__img {
+    grid-area: imge;
+    background: url("/images/image-hero-mobile.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    order: 1;
+    background-position: center;
+    width: auto;
+  }
+  .home__brand {
+    grid-area: brand;
+    order: 3;
+    max-width: 80%;
+  }
+  .home__brand img {
+    margin-left: 5px;
+    place-items: center;
+    width: 20%;
+    margin-right: 2px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .home__container {
+    display: grid;
+    gap: 3em;
+    margin: 5em 8em;
+    align-items: center;
+    grid-template-areas: "txt imge" "brand imge";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 100px;
+  }
+  .home__data {
+    grid-area: txt;
+  }
+  .home__img {
+    grid-area: imge;
+    width: auto;
+    min-height: 100vh;
+    background: url("/images/image-hero-desktop.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .home__brand {
+    grid-area: brand;
+    max-width: 100%;
+  }
+  .home__brand img {
+    margin-right: 1.5rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .home__container {
+    display: grid;
+    gap: 3em;
+    margin: 5em 8em;
+    align-items: center;
+    grid-template-areas: "txt imge" "brand imge";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 100px;
+  }
+  .home__data {
+    grid-area: txt;
+  }
+  .home__img {
+    grid-area: imge;
+    width: auto;
+    min-height: 100vh;
+    background: url("/images/image-hero-desktop.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .home__brand {
+    grid-area: brand;
+    max-width: 100%;
+  }
+  .home__brand img {
+    margin-right: 1.5rem;
+  }
+}
+/* Mobile styles */
+@media screen and (max-width: 767px) {
+  /* Your mobile styles here */
+  h1 {
+    font-size: 2em;
+  }
+  p {
+    font-size: 16px;
+  }
+  .nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 100%;
+    justify-content: space-between;
+  }
+  .nav li a:hover {
+    color: hsl(0, 0%, 8%);
+  }
+  .nav li .reg:hover {
+    border-color: hsl(0, 0%, 8%);
+  }
+  .nav__logo {
+    font-size: 2em;
+  }
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    background-color: hsl(0, 0%, 98%);
+    padding-top: 3rem;
+    transition: 0.4s;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  }
+  .nav__item {
+    margin-bottom: 20px;
+  }
+  .nav__item.toggle-content {
+    position: absolute;
+    top: 4em;
+    right: 0;
+    line-height: 0;
+    height: auto;
+    max-width: 100%;
+    border: 2px solid rgb(246, 246, 246);
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.99);
+    box-shadow: 31px 27px 89px -26px rgba(0, 0, 0, 0.48);
+    -webkit-box-shadow: 31px 27px 89px -26px rgba(0, 0, 0, 0.48);
+    -moz-box-shadow: 31px 27px 89px -26px rgba(0, 0, 0, 0.48);
+  }
+  .nav__signup ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-direction: column;
+  }
+  .nav__signup ul li a.reg {
+    border: 2px solid hsl(0, 0%, 41%);
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+  }
+  .nav__toggle {
+    width: 2em;
+  }
+  .nav__close {
+    width: 50px;
+    height: auto;
+    box-shadow: none;
+    padding-top: 20px;
+    display: none;
+  }
+  .button {
+    padding: 0.5rem 1rem;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Your desktop styles here */
+  .nav {
+    margin: 1rem;
+    height: 3rem;
+    width: auto;
+    overflow: wrap;
+    display: flex;
+    align-items: center;
+  }
+  .nav__logo {
+    font-weight: 700;
+  }
+  .nav__menu ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+  }
+  .nav__item .toggle-container {
+    gap: 20px;
+  }
+  .nav__item.toggle-button {
+    margin-right: 3rem;
+  }
+  .nav__item.toggle-button a {
+    margin-right: 0.5rem;
+  }
+  .nav__item.toggle-button aspan img {
+    margin-right: 3rem;
+  }
+  .nav__item.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .nav__item.content img {
+    margin-right: 1rem;
+  }
+  .nav__signup ul {
+    position: fixed;
+    right: 0;
+    top: 1.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+  }
+  .nav__signup ul li a {
+    margin-right: 3rem;
+  }
+  .nav__signup ul li a.reg {
+    border: 2px solid hsl(0, 0%, 41%);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+  .nav__toggle, .nav__close {
+    display: none;
+  }
+  h1 {
+    margin-top: 1.5em;
+    font-size: 4em;
+    white-space: pre-line;
+    content: "Maken remote work";
+    line-height: 1;
+  }
+  p {
+    white-space: pre-line;
+  }
+}
+/* Desktop styles */
+@media screen and (min-width: 1025px) {
+  /* Your desktop styles here */
+  .nav {
+    margin: 1rem;
+    height: 3rem;
+    width: auto;
+    overflow: wrap;
+    display: flex;
+    align-items: center;
+  }
+  .nav__logo {
+    font-weight: 700;
+  }
+  .nav__menu ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+  }
+  .nav__item .toggle-container {
+    gap: 20px;
+  }
+  .nav__item.toggle-button {
+    margin-right: 3rem;
+  }
+  .nav__item.toggle-button a {
+    margin-right: 0.5rem;
+  }
+  .nav__item.toggle-buttonspan img {
+    margin-right: 3rem;
+  }
+  .nav__item.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .nav__item.content img {
+    margin-right: 1rem;
+  }
+  .nav__signup ul {
+    position: fixed;
+    right: 0;
+    top: 1.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+  }
+  .nav__signup ul li a {
+    margin-right: 3rem;
+  }
+  .nav__signup ul li a.reg {
+    border: 2px solid hsl(0, 0%, 41%);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+  .nav__toggle, .nav__close {
+    display: none;
+  }
+  h1 {
+    margin-top: 1.5em;
+    font-size: 4em;
+    white-space: pre-line;
+    content: "Maken remote work";
+    line-height: 1;
+  }
+  p {
+    white-space: pre-line;
+  }
+}/*# sourceMappingURL=main.css.map */

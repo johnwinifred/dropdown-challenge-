@@ -53,60 +53,116 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - CSS custom properties
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- Scss preprocessor
 
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I Learnt a great deal in using css and also practicising what I have learnt in javascript. Some of the things I learnt include creating a responsive navbar for different screen sizes. In my html, I learnt how to use the BEM (Block Element Modifier) methodology for naming. This method was particularly helpful in styling my classes.
+for css, i learnt how to use css animations and also positioning. I discovered cool tools that helped me generaate box shadows with ease. 
 
 To see how you can add code snippets, see below:
 
 ```html
 <h1>Some HTML code I'm proud of</h1>
+<div class="nav__toggle" id="nav-toggle">
+        <a class="menu-icon"><img src="images/icon-menu.svg" alt=""></a>
+      </div>
+
 ```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
-}
+ &__menu {
+            
+            // display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 0;
+            // margin: 0 auto;
+            overflow: hidden;
+            transition: 0.5s;
+            background-color: $white;
+            padding-top: $mb-6;
+            // padding-right: $mb-2;
+            transition: 0.4s;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+
+        }
+&__item{
+            margin-bottom: 20px;
+            &.toggle-content {
+                position: absolute;
+                top: 4em;
+                right:0;
+                line-height: 0;
+                height: auto;
+                max-width: 100%;
+                border: 2px solid rgb(246, 246, 246);
+                padding: 0.5rem 0.5rem;
+                border-radius: 0.5rem;
+                background: rgba(255, 255, 255, 0.99);
+                box-shadow: 31px 27px 89px -26px rgba(0, 0, 0, 0.48);
+                -webkit-box-shadow: 31px 27px 89px -26px rgba(0, 0, 0, 0.48);
+                -moz-box-shadow: 31px 27px 89px -26px rgba(0, 0, 0, 0.48);
+            }
+        }
 ```
 ```js
 const proudOfThisFunc = () => {
   console.log('🎉')
 }
+// code to toggle caret and display content
+
+const toggleHeaders = document.querySelectorAll('.toggle-button');
+const toggleIcons = document.querySelectorAll('.toggle-icon');
+const toggleContents = document.querySelectorAll('.toggle-content');
+
+let currentlyOpenIndex = null;
+
+toggleHeaders.forEach((toggleHeader, index) => {
+  toggleHeader.addEventListener('click', () => {
+    if (currentlyOpenIndex !== null) {
+      // Close the previously open content
+      toggleContents[currentlyOpenIndex].style.display = 'none';
+      toggleIcons[currentlyOpenIndex].style.transform = 'rotate(0deg)'
+};
+// Toggle the clicked content
+toggleContents[index].style.display = 'block';
+toggleIcons[index].style.transform = 'rotate(180deg)';
+    
+    
+    // Update the currently open index
+    currentlyOpenIndex = index;
+  });
+});
+
 ```
 
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+I am sure I had few bugs. I hope to make this more than a single page application.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [W3 schools](https://www.w3schools.com/howto/howto_js_collapse_sidebar.asp) - This helped me create the collapsed sidebar for the mobile screen.
+- [Freecode camp sass tutorial](https://www.freecodecamp.org/news/the-beginners-guide-to-sass/) - This is an amazing article which helped me finally understand sass. I'd recommend it to anyone still learning this concept.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Winifred John](https://www.linkedin.com/in/winifred-john-584731205/)
+- Frontend Mentor - [@johnwinifred](https://www.frontendmentor.io/profile/johnwinifred)
+- Twitter - [@WinneXia](https://twitter.com/WinneXia)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+I really want to acknowledge the team for bringing up these challenges. I really learnt a lot.
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**

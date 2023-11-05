@@ -1,0 +1,36 @@
+@import url('https://fonts.google.com/specimen/Epilogue');
+
+// layout
+$header-height:3rem;
+// colors
+$white: hsl(0, 0%, 98%);
+$medium-gray: hsl(0, 0%, 41%);
+$almost-black: hsl(0, 0%, 8%);
+
+
+// font & typography
+$font-p: 16px;
+$logo-font:2em;
+
+  /* Desktop font */
+@media screen and (min-width: 1025px) {
+$font-p: 18px;
+$logo-font:3em;
+  }
+$font-semi-bold: 500;
+$font-bold:700;
+$body-font: "Epilogue";
+$text-color:$medium-gray;
+
+
+// margin
+$mb-1: 0.5rem;
+$mb-2: 1rem;
+$mb-3: 1.5rem;
+$mb-4: 2rem;
+$mb-5: 2.5rem;
+$mb-6: 3rem;
+
+$desktop-background-image: 'images/image-hero-desktop.png';
+$mobile-background-image: 'images/image-hero-mobile.png';
+

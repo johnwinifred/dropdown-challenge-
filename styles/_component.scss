@@ -1,0 +1,93 @@
+// header
+header {
+    width: 100%;
+    position: fixed;
+    background-color: $white;
+    left: 0;
+    top: 0;
+    padding: 0 $mb-3;
+
+}
+
+// button
+.button {
+    display: inline-block;
+    background-color: $almost-black;
+    color: $white;
+    padding: 0.75rem $mb-3;
+    border: 2px solid $almost-black;
+    border-radius: $mb-1;
+    font-weight: $font-semi-bold;
+    margin-top: $mb-6;
+
+    &:hover {
+        background: $white;
+        color: $almost-black;
+    }
+}
+
+// navbar
+.nav {
+    width: auto;
+    &__logo {
+        color: $almost-black ;
+        font-size: $logo-font ;
+    }
+
+
+    li a:hover {
+        color: $almost-black;
+
+    }
+
+    li .reg:hover {
+        border-color: $almost-black;
+    }
+    li a:hover .toggle-icon{
+        color: red;
+    }
+    &__item {
+        a:hover .toggle-icon {
+            color: $almost-black;
+        }
+        .toggle-icon {
+            width: 12px;
+            /* Set the appropriate width and height for your caret icon */
+            height: 12px;
+            background-image: url('/images/icon-arrow-down.svg');
+            /* Image for the caret-down icon */
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: inline-block;
+            transition: color 0.3s;
+            transition: transform 0.3s;
+            /* Add a smooth transition effect */
+            transform: rotate(0deg);
+            /* Initial rotation state */
+        }
+
+        .toggle-content {
+            display: none;
+            /* Hide the content initially */
+        }
+
+        &.toggle-content {
+            position: absolute;
+            top: 4em;
+            line-height: 0;
+            height: auto;
+            max-width: 100%;
+            border: 2px solid rgb(246, 246, 246);
+            padding: 0.5rem 0.5rem;
+            border-radius: 0.5rem;
+            background: rgba(255, 255, 255, 0.99);
+            box-shadow: 31px 27px 89px -26px rgba(0, 0, 0, 0.48);
+            -webkit-box-shadow: 31px 27px 89px -26px rgba(0, 0, 0, 0.48);
+            -moz-box-shadow: 31px 27px 89px -26px rgba(0, 0, 0, 0.48);
+        }
+    }
+
+    
+
+}

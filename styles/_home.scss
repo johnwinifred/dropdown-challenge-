@@ -1,0 +1,130 @@
+@media screen and (max-width: 767px){
+    .home{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 3em;
+        &__container{
+           @include grid();
+           grid-template-areas: "imge"
+                                "txt"
+                                "brand";
+           grid-template-columns: 1fr;
+           grid-template-rows: 1fr 1fr 100px;
+            /* 90% of the viewport width */
+            max-width: 375px; /* Maximum width */
+           
+          
+
+        }
+        &__data{
+            grid-area: txt;
+           order: 2;
+           width: 85%;
+           text-align: center;
+        }
+        
+        &__img{
+            grid-area: imge;
+            background: url('/images/image-hero-mobile.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            order: 1;
+            background-position: center;
+            width: auto;
+            
+        }
+        &__brand{
+            grid-area: brand;
+            order: 3;
+            max-width: 80%;
+            
+            
+          img{
+            margin-left: 5px;
+            place-items: center;
+            width: 20%;
+            margin-right: 2px;
+            
+          }
+        }
+
+        
+    }
+}
+@media screen and  (min-width: 768px) and (max-width: 1024px){
+    .home {
+        &__container {
+          @include grid();
+          margin: 5em 8em;
+          align-items: center;
+          grid-template-areas: "txt imge" "brand imge";
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 100px;
+        }
+    
+        &__data {
+          grid-area: txt;
+        }
+    
+        &__img {
+          grid-area: imge;
+          width: auto;
+          min-height: 100vh;
+          background: url("/images/image-hero-desktop.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+    
+        &__brand {
+          grid-area: brand;
+          max-width: 100%;
+    
+          img {
+            margin-right: $mb-3;
+          }
+        }
+      }
+}
+@media screen and (min-width: 1025px){
+    .home{
+        &__container{
+            @include grid();
+            margin: 5em 8em;
+            align-items: center;
+                grid-template-areas:"txt imge"
+                                     "brand imge";
+                                    //  "footer footer";
+                grid-template-columns: 1fr 1fr ;
+                grid-template-rows: 1fr 100px;
+                
+               
+            }
+            &__data{
+                grid-area: txt;
+               
+                
+            }
+            
+            &__img{
+                grid-area: imge;
+                width: auto;
+                min-height: 100vh;
+                background: url("/images/image-hero-desktop.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                
+                }            
+            &__brand{
+                grid-area: brand;
+                max-width: 100%;
+                
+              img{
+                margin-right: $mb-3;
+        
+            
+              }
+            }
+    }
+   
+}
