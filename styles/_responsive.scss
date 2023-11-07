@@ -65,6 +65,9 @@
                 -webkit-box-shadow: 31px 27px 89px -26px rgba(0, 0, 0, 0.48);
                 -moz-box-shadow: 31px 27px 89px -26px rgba(0, 0, 0, 0.48);
             }
+            &.toggle-content.active{
+              display: block
+            }
         }
         &__signup {
             ul { 
@@ -232,9 +235,9 @@
                 &span img {
                     margin-right: $mb-6;
                 }
-
+              
             }
-
+           
 
             &.content {
                 @include flex();
@@ -242,6 +245,10 @@
                 img {
                     margin-right: $mb-2;
                 }
+               
+            }
+            .active{
+              display: block;
             }
         }
 

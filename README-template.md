@@ -30,15 +30,9 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Screenshot](https://drive.google.com/drive/folders/1hLmRuwp3lUVvqL9RqkzSkNkE3VHrQ-Uw?usp=drive_link)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
@@ -119,29 +113,22 @@ const toggleHeaders = document.querySelectorAll('.toggle-button');
 const toggleIcons = document.querySelectorAll('.toggle-icon');
 const toggleContents = document.querySelectorAll('.toggle-content');
 
-let currentlyOpenIndex = null;
+// let currentlyOpenIndex = null;
 
 toggleHeaders.forEach((toggleHeader, index) => {
   toggleHeader.addEventListener('click', () => {
-    if (currentlyOpenIndex !== null) {
-      // Close the previously open content
-      toggleContents[currentlyOpenIndex].style.display = 'none';
-      toggleIcons[currentlyOpenIndex].style.transform = 'rotate(0deg)'
-};
-// Toggle the clicked content
-toggleContents[index].style.display = 'block';
-toggleIcons[index].style.transform = 'rotate(180deg)';
-    
-    
-    // Update the currently open index
-    currentlyOpenIndex = index;
+    // Toggle the clicked content
+    if (index === 1) {
+      toggleContents[index].classList.toggle('active');
+      toggleContents[index - 1].classList.remove('active')
+    } else if (index === 0) {
+      toggleContents[index].classList.toggle('active');
+      toggleContents[index + 1].classList.remove('active')
+    }
   });
 });
 
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
 
 
 ### Continued development

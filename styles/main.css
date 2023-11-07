@@ -287,6 +287,9 @@ img {
     -webkit-box-shadow: 31px 27px 89px -26px rgba(0, 0, 0, 0.48);
     -moz-box-shadow: 31px 27px 89px -26px rgba(0, 0, 0, 0.48);
   }
+  .nav__item.toggle-content.active {
+    display: block;
+  }
   .nav__signup ul {
     display: flex;
     flex-direction: row;
@@ -421,6 +424,9 @@ img {
   }
   .nav__item.content img {
     margin-right: 1rem;
+  }
+  .nav__item .active {
+    display: block;
   }
   .nav__signup ul {
     position: fixed;
